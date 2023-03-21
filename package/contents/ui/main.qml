@@ -42,7 +42,7 @@ Item {
     //present under /sys/class/power_supply
     function getBatteryDirectoryPaths() {
         var batteryObjects = []
-        for(var i=0; i<4; i++) {
+        
             var path = "/sys/class/power_supply/macsmc-battery/present";
             var req = new XMLHttpRequest();
             req.open("GET", path, false);
@@ -58,7 +58,7 @@ Item {
 
                 batteryObjects.push(battery)
             }
-        }
+      
 
         return batteryObjects
     }
