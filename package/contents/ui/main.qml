@@ -43,13 +43,13 @@ Item {
     function getBatteryDirectoryPaths() {
         var batteryObjects = []
         for(var i=0; i<4; i++) {
-            var path = "/sys/class/power_supply/BAT" + i + "/present";
+            var path = "/sys/class/power_supply/macsmc-battery/present";
             var req = new XMLHttpRequest();
             req.open("GET", path, false);
             req.send(null)
 
             if(req.responseText == "1\n") {
-                var directoryUrl =  "/sys/class/power_supply/BAT" + i;
+                var directoryUrl =  "/sys/class/power_supply/macsmc-battery";
 
                 var battery = {
                     directoryUrl: directoryUrl,
